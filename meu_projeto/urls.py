@@ -1,5 +1,5 @@
 """
-URL configuration for TiOrientaBackEnd project.
+URL configuration for meu_projeto project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -14,9 +14,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('api/gps_data/', views.gps_data, name='gps_data'),
+    path('admin/', admin.site.urls),
+    path('api/', include('meu_app.urls')),  # Substitua 'meu_app' pelo nome do seu app
 ]
